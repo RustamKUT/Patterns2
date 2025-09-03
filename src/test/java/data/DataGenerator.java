@@ -37,7 +37,7 @@ public class DataGenerator {
 
     public static String generateComplexName() {
         String[] name = new String[]{"Петров Александр Дмитриевич", "Иванова Мария Сергеевна",
-                "Смирнов Дмитрий Алексеевич", "Васильева Анна Михайловна", "Кузнецов Андрей Викторович"};
+                "Смирнов Дмитрий Алексеевич", "Васильева Анна Михайловна", "Кузнецов Пётр Викторович"};
         return name[random.nextInt(name.length)];
     }
 
