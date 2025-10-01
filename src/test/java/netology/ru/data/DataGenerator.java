@@ -20,7 +20,7 @@ public class DataGenerator {
             .log(LogDetail.ALL)
             .build();
 
-    public static void setUpAll(RegistrationInfo info) {
+    public static void sendRegistrationRequestAndVerifyResponse(RegistrationInfo info) {
         // сам запрос
         given() // "дано"
                 .spec(requestSpec) // указываем, какую спецификацию используем
@@ -35,7 +35,7 @@ public class DataGenerator {
         Faker faker = new Faker(new Locale(locale));
         String login = faker.name().username();
         String password = faker.internet().password();
-        setUpAll(new RegistrationInfo(login, password, "active"));
+        sendRegistrationRequestAndVerifyResponse(new RegistrationInfo(login, password, "active"));
         return new RegistrationInfo(login, password, "active");
     }
 
@@ -50,7 +50,7 @@ public class DataGenerator {
         Faker faker = new Faker(new Locale(locale));
         String login = faker.name().username();
         String password = faker.internet().password();
-        setUpAll(new RegistrationInfo(login, password, "blocked"));
+        sendRegistrationRequestAndVerifyResponse(new RegistrationInfo(login, password, "blocked"));
         return new RegistrationInfo(login, password, "blocked");
     }
 
@@ -58,7 +58,7 @@ public class DataGenerator {
         Faker faker = new Faker(new Locale(locale));
         String login = faker.name().username();
         String password = faker.internet().password();
-        setUpAll(new RegistrationInfo(login, password, "active"));
+        sendRegistrationRequestAndVerifyResponse(new RegistrationInfo(login, password, "active"));
         return new RegistrationInfo(faker.name().username(), password, "active");
     }
 
@@ -66,7 +66,7 @@ public class DataGenerator {
         Faker faker = new Faker(new Locale(locale));
         String login = faker.name().username();
         String password = faker.internet().password();
-        setUpAll(new RegistrationInfo(login, password, "active"));
+        sendRegistrationRequestAndVerifyResponse(new RegistrationInfo(login, password, "active"));
         return new RegistrationInfo(login, faker.internet().password(), "active");
     }
 
